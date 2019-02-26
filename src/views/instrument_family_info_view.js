@@ -5,7 +5,6 @@ const InstrumentFamilyView = function(container) {
 
 };
 
-
 InstrumentFamilyView.prototype.bindEvents = function (){
   PubSub.subscribe('InstrumentFamilies:ready-to-display', (evt) => {
     const instrumentFamilyDets = evt.detail;
@@ -21,10 +20,8 @@ InstrumentFamilyView.prototype.outputDetails = function(dets) {
   this.container.appendChild(detail);
 }
 
-
 const createInstrumentFamilyInfo = function (dets){
   const detail = document.createElement('div');
-  detail.classList.add('max-width');
   const name = document.createElement('h2');
   name.textContent = dets.name;
   detail.appendChild(name);
