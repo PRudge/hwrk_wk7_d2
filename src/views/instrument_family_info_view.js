@@ -17,11 +17,42 @@ InstrumentFamilyView.prototype.bindEvents = function (){
 };
 
 InstrumentFamilyView.prototype.outputDetails = function(dets) {
-  const detail = document.createElement('p');
-  detail.textContent = dets.name;
+  const detail = document.createElement('div');
+  console.log(detail)
+  const name = document.createElement('h2');
+  name.textContent = dets.name;
+  detail.appendChild(name);
+
+  const descript = document.createElement('p');
+  descript.textContent = dets.description;
+  detail.appendChild(descript);
+
+  const instrumentsInclude = document.createElement('h3');
+  instrumentsInclude.textContent = `Instruments include :`;
+  detail.appendChild(instrumentsInclude);
+
+  // instrumentList = this.createInstrumentListElement();
+  const instrumentListItem = document.createElement('ul');
+
+  dets.instruments.forEach(function(name) {
+    const instrument = document.createElement('li');
+    instrument.textContent = name;
+    instrumentListItem.appendChild(instrument);
+    // this.addInstrumentName(name, instrumentListItem)
+
+  });
+
+  detail.appendChild(instrumentListItem);
+
+  this.container.innerHTML = '';
   this.container.appendChild(detail);
 }
 
+// InstrumentFamilyView.prototype.addInstrumentName = function(name, instrumentListItem) {
+//   const instrument = document.createElement('h4');
+//   instrument.textContent = name;
+//   instrumentListItem.appendChild(instrument);
+// }
 
 
 module.exports = InstrumentFamilyView;
