@@ -1,10 +1,21 @@
 body {
- background-color: #dddfd5;
- color: #193e42;
-
+  background-color: #dddfd5;
+  color: #193e42;
 }
 
-div ul li {
- padding: 0;
- margin: 10px 0 0 0;
+li {
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+#wrapper{
+  display: grid;
+  grid-template-columns: 3fr  5fr  3fr;
+  grid-template-rows: auto auto auto;
+  width: 100%;
+  margin: 0 auto;
+}
+
+main{
+  grid-area: 1/2/2/3;
 }
