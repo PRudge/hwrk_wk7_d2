@@ -11,10 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const instrumentFamilyDets = new InstrumentFamilies(instrumentFamilyData);
   instrumentFamilyDets.bindEvents();
 
+  const viewInstrumentFamily = document.querySelector('#instrument-family-info');
+  const instrumentFamilyInfo = new InstrumentFamilyView(viewInstrumentFamily);
+  instrumentFamilyInfo.bindEvents();
 
-
-  // const viewInstrumentFamily = document.querySelector('#instrument-family-info');
-  // const instrumentFamilyInfo = new InstrumentFamilyView(viewInstrumentFamily);
-  // instrumentFamilyInfo.bindEvents();
 
 });
